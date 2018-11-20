@@ -6,7 +6,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.living_room_lamp",
-                "name": null,
+                "name": "Living Room Lamp",
                 "platform": "wemo",
                 "unique_id": "221814K0104038"
             },
