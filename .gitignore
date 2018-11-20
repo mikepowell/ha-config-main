@@ -1,0 +1,15 @@
+*.conf
+*.txt
+*.log
+.storage/*
+!.storage/core.entity_registry
+.cloud
+.google.token
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+.HA_VERSION
+.uuid
+*.db
+*.sqlite
+*.xml

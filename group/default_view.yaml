@@ -1,0 +1,10 @@
+name: Home
+view: true
+icon: mdi:home
+entities:
+  - switch.basement_lamp
+  - switch.living_room_lamp
+  - switch.cord_switch
+  - group.all_switches
+  - group.all_lights
+  - group.all_devices
