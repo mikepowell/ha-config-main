@@ -6,3 +6,8 @@ config/*.db
 config/*.sqlite
 config/*.xml
 config/*.conf
+config/edgeos.key
+config/harmony*.conf
+config/*.log
+config/.cloud
+config/.storage

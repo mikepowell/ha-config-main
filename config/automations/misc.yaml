@@ -1,9 +1,9 @@
 - alias: Set theme at startup
   trigger:
-  - event: start
+    event: start
     platform: homeassistant
   action:
-  - data:
+    data:
       name: Me_Dark_Theme
     service: frontend.set_theme
 
@@ -11,7 +11,7 @@
   description: ''
   trigger: []
   condition:
-  - condition: or
+    condition: or
     conditions:
     - below: '40'
       condition: numeric_state
@@ -23,7 +23,7 @@
       condition: numeric_state
       entity_id: sensor.porch_door_lock_battery
   action:
-  - data:
+    data:
       message: Door lock battery low!
     service: notify.notify
 
@@ -31,12 +31,11 @@
   description: This can be used to more or less tell if the power is out, even if
     the generator is running.
   trigger:
-  - entity_id: climate.main_floor
     platform: state
+    entity_id: climate.main_floor
     to: unavailable
-  condition: []
   action:
-  - data:
+    data:
       message: Downstairs thermostat went offline (maybe the power went out?)
     service: notify.notify
 
@@ -44,11 +43,11 @@
   description: This can be used to more or less tell if the power is back on, even
     if the generator is running.
   trigger:
-  - entity_id: climate.main_floor
+    entity_id: climate.main_floor
     from: unavailable
     platform: state
   condition: []
   action:
-  - data:
+    data:
       message: Downstairs thermostat back online (maybe the power came back on?)
     service: notify.notify

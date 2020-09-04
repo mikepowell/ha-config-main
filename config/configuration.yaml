@@ -30,18 +30,18 @@ camera:
 
 tuya: !include tuya.yaml
 
-lovelace:
-  mode: yaml
+lovelace: !include lovelace-config.yaml
 
 sensor:
 
-remote_homeassistant: !include remote_homeassistant.yaml
+remote_homeassistant: !include remote-homeassistant.yaml
 
 ambient_station:
   api_key: !secret ambient_api_key
   app_key: !secret ambient_app_key_2
 
+binary_sensor: !include binary-sensor.yaml
 group: !include groups.yaml
 automation: !include_dir_merge_list automations
 script: !include scripts.yaml
-scene: !include scenes.yaml
+scene: !include_dir_merge_list scenes

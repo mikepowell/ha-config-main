@@ -1,11 +1,21 @@
 - alias: Turn on spare room light at night
-  description: ''
   trigger:
-  - at: '20:00:00'
     platform: time
-  condition: []
+    at: '20:00:00'
   action:
-  - domain: switch
+    service: switch.turn_on
     entity_id: switch.spare_room_lamp
-    type: turn_on
   mode: single
+
+- alias: Turn off spare room light on phone charging
+  trigger:
+    platform: state
+    entity_id: sensor.michaels_iphone_battery_state
+    to: charging
+  condition:
+    condition: time
+    after: '20:00:00'
+    before: '01:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.spare_room_lamp

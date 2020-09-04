@@ -4,7 +4,20 @@ views:
     cards:
       - cards:
           - cards:
-              - entity: scene.basement_work_mode
+
+              - entity: scene.basement_work_mode_on
+                icon: 'mdi:account-hard-hat'
+                show_icon: true
+                show_name: true
+                show_state: false
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.basement_work_mode_on
+                type: button
+
+              - entity: scene.basement_work_mode_off
                 hold_action:
                   action: none
                 icon: 'mdi:account-hard-hat'
@@ -15,12 +28,14 @@ views:
                   action: call-service
                   service: scene.turn_on
                   service_data:
-                    entity_id: scene.basement_work_mode
+                    entity_id: scene.basement_work_mode_off
                 type: button
+
             type: horizontal-stack
         type: vertical-stack
     icon: 'mdi:home-assistant'
     title: ''
+
   - badges: []
     cards:
       - cards:

@@ -3,6 +3,7 @@
   host: 8.8.8.8
   count: 1
   scan_interval: 3
+
 - platform: ping
   name: Hassio barn ping
   host: 192.168.1.96
