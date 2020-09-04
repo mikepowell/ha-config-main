@@ -5,7 +5,7 @@ homeassistant:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  base_url: https://3z3f9tm5v7iqev1px3n0t7xf2em28db8.ui.nabu.casa/
+  base_url: !secret nabu_base_url
 
 # Text to speech
 tts:
