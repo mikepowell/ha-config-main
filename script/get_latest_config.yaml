@@ -1,4 +1,0 @@
-alias: "Get Latest Config"
-sequence:
-  - service: shell_command.update_config_from_github
-  - service: homeassistant.restart

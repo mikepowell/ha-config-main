@@ -1,0 +1,22 @@
+- id: '1598279842446'
+  alias: Turn on basement stairs light on motion
+  trigger:
+  - entity_id: binary_sensor.basement_stairs_motion
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: light.basement_stairs_light
+    service: light.turn_on
+  mode: single
+- id: '1598280040485'
+  alias: Turn off basement stairs light after motion end
+  trigger:
+  - entity_id: binary_sensor.basement_stairs_motion
+    platform: state
+    to: 'off'
+    for:
+      minutes: 2
+  action:
+  - entity_id: light.basement_stairs_light
+    service: light.turn_off
+  mode: single

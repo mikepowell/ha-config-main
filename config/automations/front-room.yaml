@@ -1,0 +1,24 @@
+- alias: Turn on bookshelf lights when front room lamp turned on
+  description: ''
+  trigger:
+  - domain: switch
+    entity_id: switch.front_room_floor_lamp
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - domain: light
+    entity_id: light.bookshelf_lights
+    type: turn_on
+- alias: Turn off bookshelf lights when front room lamp turned off
+  description: ''
+  trigger:
+  - domain: switch
+    entity_id: switch.front_room_floor_lamp
+    platform: device
+    type: turned_off
+  condition: []
+  action:
+  - domain: light
+    entity_id: light.bookshelf_lights
+    type: turn_off

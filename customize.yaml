@@ -1,7 +1,0 @@
-group.all_switches:
-  hidden: false
-  friendly_name: Switches
-
-group.all_automations:
-  hidden: false
-  friendly_name: Automations

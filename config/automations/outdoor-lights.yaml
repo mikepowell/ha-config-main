@@ -1,0 +1,41 @@
+- alias: Turn porch string on with sofa lights
+  description: ''
+  trigger:
+  - domain: light
+    entity_id: light.sofa_lights
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - domain: switch
+    entity_id: switch.aeotec_cord
+    type: turn_on
+
+- alias: Turn porch string off with sofa lights
+  description: ''
+  trigger:
+  - domain: light
+    entity_id: light.sofa_lights
+    platform: device
+    type: turned_off
+  condition: []
+  action:
+  - domain: switch
+    entity_id: switch.aeotec_cord
+    type: turn_off
+
+- alias: Turn on patio lights when basement door unlocked
+  description: ''
+  trigger:
+  - domain: lock
+    entity_id: lock.basement_door_lock
+    platform: device
+    type: unlocked
+  condition:
+  - after: sunset
+    before: sunrise
+    condition: sun
+  action:
+  - domain: switch
+    entity_id: switch.patio_light
+    type: turn_on
